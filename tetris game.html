@@ -1,0 +1,197 @@
+<!DOCTYPE html>>
+<html>
+    <header>
+        
+        
+    </header>
+    <body>
+        
+        
+        <div id="vol-panel" onmouseover="sliderPopout()" onmouseout="sliderVanish()">
+            <div id="speaker"></div>
+            <script src="tetrisThemeAndVolumeControl.js"></script>
+            <div id="slider">
+              <input id="vol-control" type="range" min="0" max="100" step="1" onchange="SetVolume(this.value)"></input>
+            </div>
+           </div>
+        <div id = "everything">
+            <div id = "mainPanel">
+            <div id = "playfield" class = "a">
+              <div id="tetradContainer">
+                <div id = "block1" class = "tetrad"></div>
+                <div id = "block2" class = "tetrad"></div>
+                <div id = "block3" class = "tetrad"></div>
+                <div id = "block4" class = "tetrad"></div>
+              </div>
+              </div>
+            </div>
+            <canvas id = "cement" width = "250" height = "500"></canvas>
+            <div id = "sidePanel">
+              <h3 class = "text">score</h3>
+              <div id = "score"></div>
+              <h3 class = "text">next piece</h3>
+              <canvas id = "nextPiece" width = "100" height = "100"></canvas>
+              <script src="tg.js"></script>
+              <button class = "btn bigBtn" onclick = "start(); newGame()">new game</button>
+              <button class = "btn bigBtn" onclick = "togglePause(); pause()">pause</button>
+              <div id = "controls">
+              <button id = "rotateButton" class = "btn" onclick = "rotate()">&#8635</button><br>
+              <button class = "btn contButtons" onclick = "goLeft()">&#8678</button>
+              <button class = "btn contButtons" onclick = "goDown()">&#8681</button>
+              <button class = "btn contButtons" onclick = "goRight()">&#8680</button>
+            </div>
+            </div>
+          </div>
+          <h1 id = "topBorder">Tetris</h1>
+    </body>
+    <style>
+    #playfield {
+  height: 500px;
+  min-width: 250px;
+  background: black; 
+  position: relative;
+  border: 20px solid blue;
+  border-top: 0px;
+}
+
+#cement {
+  height: 500px;
+  width: 250px;
+  position: absolute;
+  left: 20px;
+}
+
+#tetradContainer {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: -100px;
+  left: 75px;
+/*   background: yellow; */
+}
+
+.tetrad {
+  height: 24px;
+  width: 24px;
+  background: red;
+  border: solid grey .5px;
+  position: absolute;
+  top: -75px;
+  left: 25px;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+  font-size: 60px;
+  line-height: 90px;
+  color: yellow;
+}
+
+#topBorder {
+  height: 100px;
+  width: 290px;
+  background: blue;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  margin-bottom: 200px;
+  margin-left: -200px;
+}
+
+#sidePanel {
+  margin-left: 20px;
+  width: 120px;
+}
+
+#score {
+  height: 40px;
+  width: 100px;
+  background: black;
+  color: white;
+  text-align: right;
+  margin-bottom: 50px;
+  margin-left: 5px;
+  border: 1px solid blue;
+}
+
+#nextPiece {
+  width: 100px;
+  height: 100px;
+  background: black;
+  border: 1px solid blue;
+  margin-left: 5px;
+}
+
+#everything {
+  display: flex;
+  Height: 620px;
+  width: 430px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+}
+
+.text {
+  padding: 0px;
+  margin: 0px 5px;
+  border: 1px solid blue;
+  background: blue;
+  color: white;
+  width: 100px;
+  text-align: center;
+}
+
+#controls {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#rotateButton {
+  margin-bottom: 20px;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.contButtons {
+  margin-right: 5px;
+  width: 30px
+}
+
+.bigBtn {
+  height: 20px;
+  width: 100px;
+  margin: 10px 5px 0px;
+}
+
+.btn {
+  border-radius: 15px;
+  border: black;
+  background: black;
+  color: white;
+}
+
+body {
+  background: url('https://wallpapercave.com/wp/wp2675371.png');
+}
+
+#speaker {
+  font-size: 100px;
+  position: absolute;
+}
+
+#slider {
+  margin-top: 55px;
+  padding-top: 5px;
+  margin-left: 129px;
+  display: none;
+}
+
+#vol-panel {
+  display: flex;
+  width: 130px;
+}
+    </style>
+</html>
